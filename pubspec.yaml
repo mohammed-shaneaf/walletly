@@ -8,78 +8,98 @@ environment:
   sdk: ^3.8.1
 
 dependencies:
+  cupertino_icons: ^1.0.8
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
+  flutter_bloc: ^9.0.0
+  flutter_screenutil: ^5.9.3
+  flutter_svg: ^2.0.13
+  go_router: ^14.1.0
+  shared_preferences: ^2.3.2
+
 
 dev_dependencies:
+
+  # Dev tools (run at build/generation time only)
+  # flutter_flavorizr: ^2.4.1
+  flutter_lints: ^5.0.0
+
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
-  # Dev tool for generating flavors (Android/iOS, entrypoints, icons, IDE configs)
-  flutter_flavorizr: ^2.4.1
 
 flutter:
   uses-material-design: true
+  assets:
+    # Your general images folder
+    - assets/images/
+    # Optional per-flavor icon folders (safe to keep even if empty for now)
+    # - assets/icons/dev/
+    # - assets/icons/staging/
+    # - assets/icons/prod/
 
 # ------------------------------
 # Flavors without Firebase or baseUrl
 # ------------------------------
-flavorizr:
-  app:
-    android: true
-    ios: true
+# flavorizr:
+#   app:
+#     android: true
+#     ios: true
 
-  flavors:
-    dev:
-      app:
-        name: "Walletly Dev"
-      android:
-        applicationId: "com.walletly.dev"
-        resValues:
-          - name: "app_name"
-            type: "string"
-            value: "Walletly Dev"
-      ios:
-        bundleId: "com.walletly.dev"
-      assets:
-        - path: "assets/icons/dev"
-      ide: "vscode"
+#   flavors:
+#     dev:
+#       app:
+#         name: "Walletly Dev"
+#       android:
+#         applicationId: "com.walletly.dev"
+#         resValues:
+#           - name: "app_name"
+#             type: "string"
+#             value: "Walletly Dev"
+#       ios:
+#         bundleId: "com.walletly.dev"
+#       assets:
+#         - path: "assets/icons/dev"
+#       ide: "vscode"
 
-    staging:
-      app:
-        name: "Walletly Staging"
-      android:
-        applicationId: "com.walletly.staging"
-        resValues:
-          - name: "app_name"
-            type: "string"
-            value: "Walletly Staging"
-      ios:
-        bundleId: "com.walletly.staging"
-      assets:
-        - path: "assets/icons/staging"
-      ide: "vscode"
+#     staging:
+#       app:
+#         name: "Walletly Staging"
+#       android:
+#         applicationId: "com.walletly.staging"
+#         resValues:
+#           - name: "app_name"
+#             type: "string"
+#             value: "Walletly Staging"
+#       ios:
+#         bundleId: "com.walletly.staging"
+#       assets:
+#         - path: "assets/icons/staging"
+#       ide: "vscode"
 
-    prod:
-      app:
-        name: "Walletly"
-      android:
-        applicationId: "com.walletly"
-        resValues:
-          - name: "app_name"
-            type: "string"
-            value: "Walletly"
-      ios:
-        bundleId: "com.walletly"
-      assets:
-        - path: "assets/icons/prod"
-      ide: "vscode"
+#     prod:
+#       app:
+#         name: "Walletly"
+#       android:
+#         applicationId: "com.walletly"
+#         resValues:
+#           - name: "app_name"
+#             type: "string"
+#             value: "Walletly"
+#       ios:
+#         bundleId: "com.walletly"
+#       assets:
+#         - path: "assets/icons/prod"
+#       ide: "vscode"
 
-  instructions:
-    - assets:download
-    - flavors:android
-    - flavors:ios
-    - ide:config
-    - app:icon
-    - app:flavors
+#   instructions:
+#     - assets:download
+#     - flavors:android
+#     - flavors:ios
+#     - ide:config
+#     - app:icon
+#     - app:flavors
+flutter_assets:
+  assets_path: assets/images/
+  output_path: lib/core/utils
+  filename: app_images.dart
