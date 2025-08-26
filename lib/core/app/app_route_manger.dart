@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:walletly/core/app/app_name.dart';
 import 'package:walletly/features/on_boarding/presentation/views/on_boarding_view.dart';
+import 'package:walletly/features/on_boarding/presentation/views/welcome_view.dart';
 import 'package:walletly/features/splash/presentation/views/splash_view.dart';
 
 class AppRouter {
@@ -16,6 +17,11 @@ class AppRouter {
         path: AppName.onBoarding,
         name: AppName.onBoarding,
         builder: (context, state) => const OnBoardingView(),
+      ),
+      GoRoute(
+        path: AppName.welcome,
+        name: AppName.welcome,
+        builder: (context, state) => const WelcomeView(),
       ),
     ],
   );
