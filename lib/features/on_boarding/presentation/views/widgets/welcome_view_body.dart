@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:walletly/core/app/app_name.dart';
 import 'package:walletly/core/styles/app_text_style.dart';
 import 'package:walletly/core/utils/app_images.dart';
 import 'package:walletly/core/utils/custom_primary_button.dart';
@@ -26,9 +28,19 @@ class WelcomeViewBody extends StatelessWidget {
             style: AppTextStyle.regular16,
           ),
           30.verticalSpace,
-          CustomPrimaryButton(title: 'Create new account', onTap: () {}),
+          CustomPrimaryButton(
+            title: 'Create new account',
+            onTap: () {
+              context.go(AppName.signup);
+            },
+          ),
           15.verticalSpace,
-          CustomSecondryButton(title: 'Log Into Your Account', onTap: () {}),
+          CustomSecondryButton(
+            title: 'Log Into Your Account',
+            onTap: () {
+              context.go(AppName.signin);
+            },
+          ),
         ],
       ),
     );

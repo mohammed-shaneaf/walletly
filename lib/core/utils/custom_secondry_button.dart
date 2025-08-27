@@ -14,14 +14,14 @@ class CustomSecondryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.sizeOf(context).width * 0.8;
+    final width = MediaQuery.sizeOf(context).width * 0.9;
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         minimumSize: Size(width, 48),
         backgroundColor: AppColors.whiteColor,
         shape: RoundedRectangleBorder(borderRadius: AppSpacing.radiusMd),
       ),
-      onPressed: () {},
+      onPressed: onTap,
       child: Text(
         title,
         style: AppTextStyle.bold14.copyWith(color: AppColors.blackColor),
