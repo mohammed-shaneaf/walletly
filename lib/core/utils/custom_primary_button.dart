@@ -14,7 +14,7 @@ class CustomPrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.sizeOf(context).width * 0.8;
+    final width = MediaQuery.sizeOf(context).width * 0.9;
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         minimumSize: Size(width, 48),
